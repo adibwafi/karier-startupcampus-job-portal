@@ -22,12 +22,13 @@ export default function CardJob() {
       <Stack gap={3}>
       <Box className="pt-3 align-items-center w-75 mx-auto">
         {jobs.map((job) => {
-          return <CardJobContent key={job.id} job={job}></CardJobContent>
+          if (job.is_active === true) {
+            return <CardJobContent key={job.id} job={job}></CardJobContent>
+          }
         })}
       </Box>
       </Stack>
     );
-
   }
 
 }
