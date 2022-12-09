@@ -19,7 +19,6 @@ export default function ApplyJobPage() {
   let id = useParams().id;
 
   let { jobDetail } = useSelector((state) => {
-    // console.log(state)
     return state.jobReducer;
   });
 
@@ -36,8 +35,6 @@ export default function ApplyJobPage() {
     fileURL: fileURL,
     jobId: id,
   });
-  console.log(fileURL, "INI DIAAA")
-  console.log(jobDetail, "JOBDETAILLLLL")
 
   const handleChange = (event) => {
       const { name, value } = event.target;
@@ -45,7 +42,6 @@ export default function ApplyJobPage() {
         ...form,
         [name]: value,
       });
-    console.log(form, "<<<<<<<");
   };
 
   const handleSubmit = (event) => {
@@ -144,10 +140,6 @@ export default function ApplyJobPage() {
                         accept=".pdf"
                         value={form.fileURL}
                         onChange={(event) => setFileURL(event.target.files[0])
-                        // onChange={handleChange}
-                          // let uploaded = event.target.files[0]
-                          // console.log(URL.createObjectURL(uploaded))
-                          // setSaveFileURL(uploaded)
                         }
                       />
                     </Form.Group>
